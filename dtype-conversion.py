@@ -33,6 +33,7 @@ while True:
         print('Task complete')
         print('-' * 8)
     elif task == '4':
+		df['quantity'] = df['quantity'].astype(int)
         print('Task complete')
         print('-' * 8)
     elif task == '5':
