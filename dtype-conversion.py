@@ -25,6 +25,7 @@ while True:
         else:
             print('Invalid input')
     elif task == '2':
+        df['date'] = pd.to_datetime(df['date'])
         print('Task complete')
         print('-' * 8)
     elif task == '3':
