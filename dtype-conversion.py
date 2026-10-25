@@ -29,6 +29,7 @@ while True:
         print('Task complete')
         print('-' * 8)
     elif task == '3':
+		df['amount'] = df['amount'].str.replace('$', '', regex=False).str.replace(',', '', regex=False).astype(float)
         print('Task complete')
         print('-' * 8)
     elif task == '4':
