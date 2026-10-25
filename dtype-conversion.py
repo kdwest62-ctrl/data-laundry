@@ -12,6 +12,7 @@ tasks = ['1. Print CSV',
          '7. Exit']
 for item in tasks:
     print(item)
+print('-' * 8)
 while True:
     task = input('Select task: ')
     if task == '1':
@@ -37,10 +38,17 @@ while True:
         print('Task complete')
         print('-' * 8)
     elif task == '5':
+        df['discount'] = df['discount'].str.replace('%', '', regex=False).astype(int) / 100
         print('Task complete')
         print('-' * 8)
     elif task == '6':
-        print('-' * 8)
+        if df['discount'].dtype == 'float64' and df['amount'].dtype == 'float64':
+            df['net_amount'] = df['amount'] * (1 - df['discount'])
+            print('Task complete')
+            print('-' * 8)
+        else:
+            print('Convert amount and discount to float first')
+            print('-' * 8)
     elif task == '7':
         print('Program closed')
         break
